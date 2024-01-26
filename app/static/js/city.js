@@ -98,7 +98,7 @@ const CityForm =
             axios
                 .get('/master/get/city')
                 .then(function (response) {
-                    console.log(response);
+                    console.log(response['data']);
                     formdata.data = response['data']
 
                 })

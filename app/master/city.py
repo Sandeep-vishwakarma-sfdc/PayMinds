@@ -11,11 +11,59 @@ from app import db, ma
 
 @bp.route('/get/city', methods=['GET'])
 def get_city():
-    if request.method == 'GET':
-        data_schema = CitySchema(many=True)
-        data = City.query.all()
-        json_data = data_schema.dump(data)
-        return jsonify(json_data)
+    print("Inside get_city route")
+    try:
+        if request.method == 'GET':
+            data_schema = CitySchema(many=True)
+            data = City.query.all()
+            json_data = data_schema.dump(data)
+            print("JSON data:", json_data)
+            return jsonify(json_data)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return jsonify({"error": "An error occurred"}), 500
+
+# def get_city():
+#     if request.method == 'GET':
+#         print("hello")
+#         data_schema = CitySchema(many=True)
+#         print("hello1")
+#         data = City.query.all()
+#         print("hello2")
+#         json_data = data_schema.dump(data)
+#         print("hello3")
+#         return jsonify(json_data)
+
+# @bp.route('/get/city', methods=['GET'])
+# def get_city():
+#     print("Inside get_city route")
+#     try:
+#         if request.method == 'GET':
+#             data = City.query.all()
+#             data_list = [{'id': city.id, 'name': city.name} for city in data]
+#             json_data = jsonify(data_list)
+#             print("JSON data:", json_data)
+#             return json_data
+#     except Exception as e:
+#         print(f"An error occurred: {e}")
+#         return jsonify({"error": "An error occurred"}), 500
+# def get_city():
+#     print("Inside get_city route")
+#     try:
+#         if request.method == 'GET':
+#             data_schema = CitySchema(many=True)
+#             data = City.query.all()
+#             print("Data from the database:", data)
+#             data_list = [{'id': city.id, 'name': city.name} for city in data]
+#             json_data = jsonify(data_list)
+#             print("heyy",json_data )
+#             json_data = data_schema.dump(data)
+#             print("JSON data:", json_data)
+#             return jsonify(json_data)
+        
+#     except Exception as e:
+#         print(f"An error occurred: {e}")
+#         return jsonify({"error": "An error occurred"}), 500
 
 
 @bp.route('/add/city', methods=['POST'])

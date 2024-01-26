@@ -33,7 +33,7 @@ To install requirements :
 
 > pip install -r requirements.txt
 
-Hafta uses MySQL as a backend , but you are free to use any. Just change the the Database URI in config.py
+PayMinds uses MySQL as a backend , but you are free to use any. Just change the the Database URI in config.py
 
 > python ./run.py
 ## Issues and Requests

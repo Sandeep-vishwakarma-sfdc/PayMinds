@@ -44,7 +44,7 @@ def register():
             user.roles.append(role)
             db.session.add(user)
             db.session.commit()
-            session['mssg'] = "Thanks for Signing Up . Please login to use Hafta"
+            session['mssg'] = "Thanks for Signing Up . Please login to use PayMinds"
             return redirect(url_for('auth.login'))
         else:
             session['mssg'] = "Invalid Key"
