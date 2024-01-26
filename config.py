@@ -1,7 +1,8 @@
 
 class Config(object):
     SECRET_KEY = 'test'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@127.0.0.1:3306/payminds'
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@127.0.0.1:3306/payminds'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Sandeepsfdc:root%40123@Sandeepsfdc.mysql.pythonanywhere-services.com/payminds'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO=True
     # MAIL_SERVER = os.environ.get('MAIL_SERVER')
